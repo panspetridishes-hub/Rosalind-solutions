@@ -1,0 +1,12 @@
+DNA = input('Enter DNA strand: )
+complement = str.maketrans('ACTG', 'TGAC')
+
+#this helps me replace the bases with their complements in a single command
+
+Result = DNA.translate(complement)
+
+x = Result[::-1]
+
+#splicing is used to produce the reversed string
+
+print(x)
