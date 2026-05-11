@@ -1,0 +1,19 @@
+#link to the problem is https://rosalind.info/problems/iprb/
+
+def mendal_first_law(k,m,n):
+    """k: dominant homozygous
+    m : dominant heterozygous 
+    n: recessive homozygous"""
+    
+    total = k + m + n
+    probability_nn = (n/total) * ((n-1)/(total-1))
+    probability_mm = (m/total) * ((m-1)/(total-1))
+    probability_mn = ( ( (n/total) * (m/(total-1)) ) + ( (m/total) * (n/(total-1)) ) )
+    
+    probability_recessive = probability_mn*0.5 + probability_mm *0.25 + probability_nn
+    
+    probability_dominant = 1 - probability_recessive
+    
+    return probability_dominant
+
+print(mendal_first_law(30,23,15))
