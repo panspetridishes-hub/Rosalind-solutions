@@ -1,0 +1,18 @@
+string = input('enter string ')
+substring = input('enter substring ')
+positions = []
+start = 0
+
+#made an empty dictionary for the positions here
+#started a loop here
+
+while True:
+    start = string.find(substring, start)
+    if start == -1:
+        break
+    positions.append(start + 1)
+    start += 1
+
+#used a * here to avoid []
+
+print(*positions)
